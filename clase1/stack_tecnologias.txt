@@ -1,0 +1,24 @@
+JDBC Api 25 años. Son interfaces donde la implementacion la realiza el fabricante de la base.
+
+HIBERNATE 22 años. ORM Object Relational Mapper
+
+J2EE Son una serie de especificaciones de COMO se deberia implementar ejemplos:
+     Colas (JMS)
+     Transacciones (JTA)
+     JPA (ORM)
+     EJB (El spring de Java)
+     JSR #zzz (Spec de Web Service SOAP)
+
+Todo esto esta documentado en el JCP, y cada especificacion JSR
+
+JPA
+   Hibernate
+   Eclipse link
+   Apache OpenJPA
+   
+Spring Data JPA
+
+Todas las especificaciones de J2EE estan el package javax
+
+Puntualmente la de JPA esta en javax.persistence.*;
+
