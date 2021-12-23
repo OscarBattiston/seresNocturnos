@@ -1,0 +1,13 @@
+Crear un ejemplo que implemente EjemploJPA
+
+En una transaccion
+
+getTransaction()
+begin
+
+for (1..10000) {
+  crear con el faker un usuario diferente cada vez
+  em.persist(usuario)
+}
+
+commit

@@ -3,6 +3,7 @@ package edu.it;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import edu.it.components.ConectorJPA;
+import edu.it.ejemplos.EjemploPersist;
 
 @SpringBootApplication
 public class SeresNocturnos {
@@ -10,6 +11,8 @@ public class SeresNocturnos {
 		System.out.println("Inicio App");
 		
 		var connector = new ConectorJPA();
-		connector.getEntityManager();
+		var em = connector.getEntityManager();
+		
+		new EjemploPersist().run(em);
 	}
 }
