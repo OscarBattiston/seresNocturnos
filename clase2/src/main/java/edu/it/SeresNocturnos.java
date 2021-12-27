@@ -1,18 +1,14 @@
 package edu.it;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import edu.it.components.ConectorJPA;
-import edu.it.ejemplos.ManejoErrores;
+import edu.it.ejemplos.ClientSideQuery;
 
 @SpringBootApplication
 public class SeresNocturnos {
 	public static void main(String[] args) {
-		System.out.println("Inicio App");
-		
-		var connector = new ConectorJPA();
-		var em = connector.getEntityManager();
-		
-		new ManejoErrores().run(em);
+		SpringApplication.run(SeresNocturnos.class, args);
 	}
 }
