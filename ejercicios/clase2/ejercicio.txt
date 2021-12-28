@@ -1,0 +1,8 @@
+Agregar a Usuario una propiedad que se llame saldo
+asignarle un valor random de 0 a 1000
+
+Luego hacer un query donde saldo > 950
+
+new Random().nextInt(1000) // para generar un random
+
+JPQL WHERE SALDO > :saldoParam

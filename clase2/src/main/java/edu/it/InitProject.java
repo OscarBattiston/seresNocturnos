@@ -4,7 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import edu.it.components.ConectorJPA;
-import edu.it.ejemplos.ClientSideQuery;
+import edu.it.ejemplos.*;
 
 @Component
 public class InitProject implements CommandLineRunner {
@@ -14,7 +14,7 @@ public class InitProject implements CommandLineRunner {
 		var connector = new ConectorJPA();
 		var em = connector.getEntityManager();
 		
-		new ClientSideQuery().run(em);
+		new ServerSideQuery1().run(em);
 		
 		System.out.println("FIN DE LA APP O CONTINUA LA APP");
 	}

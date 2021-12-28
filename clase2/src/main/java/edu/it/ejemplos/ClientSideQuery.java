@@ -23,6 +23,7 @@ public class ClientSideQuery implements EjemploJPA {
 		TypedQuery<Usuario> tq = em.createQuery(queryStr, Usuario.class);
 		var unaLista = tq.getResultStream()
 			.filter(z -> z.apellido.equals("Dietrich"))
+			.limit(100)
 			.collect(Collectors.toList());
 		
 		for (Usuario u : unaLista) {
