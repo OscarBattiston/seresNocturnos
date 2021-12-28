@@ -10,6 +10,6 @@ public class Pelicula {
 	public String nombre;
 	public String genero;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	public Director director;
 }
