@@ -14,7 +14,7 @@ public class InitProject implements CommandLineRunner {
 		var connector = new ConectorJPA();
 		var em = connector.getEntityManager();
 		
-		new ServerSideQuery1().run(em);
+		new Agrupados().run(em);
 		
 		System.out.println("FIN DE LA APP O CONTINUA LA APP");
 	}

@@ -11,6 +11,7 @@ public class Usuario {
     public String apellido;
     public String domicilio;
     public String pais;
+    public Integer saldo;
     @Column(name="tipo_de_usuario")
     public TipoDeUsuario tipoDeUsuario;
 }

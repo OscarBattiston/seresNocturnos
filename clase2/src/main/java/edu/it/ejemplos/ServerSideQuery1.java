@@ -13,9 +13,9 @@ import edu.it.entities.Usuario;
 public class ServerSideQuery1 implements EjemploJPA {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	public void run(EntityManager em) {
-		var strQuery = "SELECT u FROM Usuario u WHERE apellido = :apellidoParam";
+		var strQuery = "SELECT u FROM Usuario u WHERE saldo > :saldoParam";
 		TypedQuery<Usuario> queryusu = em.createQuery(strQuery, Usuario.class);
-		queryusu.setParameter("apellidoParam", "Dietrich");
+		queryusu.setParameter("saldoParam", 950);
 		
 		for (Usuario u : queryusu.getResultList()) {
 			logger.info(new Gson().toJson(u));

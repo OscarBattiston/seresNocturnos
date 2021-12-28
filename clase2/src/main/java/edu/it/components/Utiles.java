@@ -21,6 +21,7 @@ public class Utiles {
 		u.tipoDeUsuario = (new Random().nextInt() % 2 == 0) ? 
 				TipoDeUsuario.USUARIO_ESTANDAR :
 				TipoDeUsuario.USUARIO_ROOT;
+		u.saldo = new Random().nextInt(1000);
 		
 		return u;
 	}
