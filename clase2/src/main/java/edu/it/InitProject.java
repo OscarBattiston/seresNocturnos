@@ -6,13 +6,15 @@ import org.springframework.stereotype.Component;
 import edu.it.components.ConectorJPA;
 import edu.it.ejemplos.*;
 
+import javax.persistence.*;
+
 @Component
 public class InitProject implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		System.out.println("Inicio App");
 		
-		var connector = new ConectorJPA();
-		var em = connector.getEntityManager();
+		ConectorJPA connector = new ConectorJPA();
+		EntityManager em = connector.getEntityManager();
 		
 		new Agrupados().run(em);
 		
