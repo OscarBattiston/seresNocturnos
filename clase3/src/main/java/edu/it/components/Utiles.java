@@ -25,4 +25,12 @@ public class Utiles {
 		
 		return u;
 	}
+	public static void dormir() {
+		try {
+			Thread.sleep(4000);
+		}
+		catch (Throwable t) {
+			
+		}
+	}
 }

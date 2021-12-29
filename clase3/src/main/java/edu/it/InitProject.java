@@ -16,7 +16,7 @@ public class InitProject implements CommandLineRunner {
 		ConectorJPA connector = new ConectorJPA();
 		EntityManager em = connector.getEntityManager();
 		
-		new RelacionUnoMuchos().run(em);
+		new EagerVsLazy().run(em);
 		
 		System.out.println("FIN DE LA APP O CONTINUA LA APP");
 	}

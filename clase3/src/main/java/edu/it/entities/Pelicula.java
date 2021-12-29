@@ -12,4 +12,13 @@ public class Pelicula {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	public Director director;
+
+	public Pelicula(String id, String nombre, String genero, Director director) {
+		this.id = id;
+		this.nombre = nombre;
+		this.genero = genero;
+		this.director = director;
+		director.peliculas.add(this);
+	}
+	public Pelicula() {}
 }

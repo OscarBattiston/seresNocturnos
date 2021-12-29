@@ -11,7 +11,14 @@ public class Director {
 	@Id
 	public String id;
 	public String nombre;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="director_id")
-	public List<Pelicula> peliculas = new ArrayList<Pelicula>(); 
+	public List<Pelicula> peliculas = new ArrayList<Pelicula>();
+	
+	public Director(String id, String nombre) {
+		this.id = id;
+		this.nombre = nombre;
+	} 
+	
+	public Director() {}
 }
