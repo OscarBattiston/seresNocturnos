@@ -1,6 +1,13 @@
 package edu.it.entities;
 
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="peliculas")
@@ -13,6 +20,9 @@ public class Pelicula {
 	@ManyToOne(cascade = CascadeType.ALL)
 	public Director director;
 
+	@ManyToMany(mappedBy="peliculas")
+	public List<Actor> actores;
+	
 	public Pelicula(String id, String nombre, String genero, Director director) {
 		this.id = id;
 		this.nombre = nombre;
