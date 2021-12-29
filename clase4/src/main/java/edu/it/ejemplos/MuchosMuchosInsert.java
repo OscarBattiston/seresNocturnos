@@ -1,13 +1,22 @@
 package edu.it.ejemplos;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.it.entities.Actor;
 import edu.it.entities.Director;
 import edu.it.entities.Pelicula;
+import edu.it.repository.DirectorRepository;
 
 @Service
 public class MuchosMuchosInsert {
+	
+	@Autowired
+	DirectorRepository directorRepository;
+	
+	@Transactional
 	public void run() {
 		Actor javierBardem = new Actor("300000001", "Javier Bardem");
         Actor pabloEcharri = new Actor("300000002", "Pablo Echarri");
@@ -38,5 +47,12 @@ public class MuchosMuchosInsert {
          * Anotar este mismo metodo con @Transactional
          * Por ultimo llamar a directorRepository.save(Elegir algun director)
          */
+        this.directorRepository.save(pineiro);
+        
+        // Enlazar muchos a muchos, es muy similar a uno a muchos
+        // Bidireccional
+        // Vamos a ver el save
+        // Lectura
+        // Convenciones de Queryes sobre la JpaRepository
 	}
 }
