@@ -63,6 +63,8 @@ public class MuchosMuchosInsert {
         eduardoNoriega.peliculas.add(plataQuemada);
         sbaraglia.peliculas.add(plataQuemada);
         */
+        plataQuemada.agregaActor(pepaPig);
+        
         
         peliculaRepository.save(plataQuemada);
         

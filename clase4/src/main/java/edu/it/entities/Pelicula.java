@@ -24,6 +24,11 @@ public class Pelicula {
 	@ManyToMany(mappedBy="peliculas", cascade = CascadeType.ALL)
 	public List<Actor> actores = new ArrayList<Actor>();
 	
+	public void agregaActor(Actor actor) {
+		this.actores.add(actor);
+		actor.peliculas.add(this);
+	}
+	
 	public Pelicula(String id, String nombre, String genero, Director director) {
 		this.id = id;
 		this.nombre = nombre;
