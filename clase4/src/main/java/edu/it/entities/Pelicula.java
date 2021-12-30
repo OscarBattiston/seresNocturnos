@@ -1,5 +1,6 @@
 package edu.it.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,8 +21,8 @@ public class Pelicula {
 	@ManyToOne(cascade = CascadeType.ALL)
 	public Director director;
 
-	@ManyToMany(mappedBy="peliculas")
-	public List<Actor> actores;
+	@ManyToMany(mappedBy="peliculas", cascade = CascadeType.ALL)
+	public List<Actor> actores = new ArrayList<Actor>();
 	
 	public Pelicula(String id, String nombre, String genero, Director director) {
 		this.id = id;

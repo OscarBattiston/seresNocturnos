@@ -9,12 +9,16 @@ import edu.it.entities.Actor;
 import edu.it.entities.Director;
 import edu.it.entities.Pelicula;
 import edu.it.repository.DirectorRepository;
+import edu.it.repository.PeliculaRepository;
 
 @Service
 public class MuchosMuchosInsert {
 	
 	@Autowired
 	DirectorRepository directorRepository;
+	
+	@Autowired 
+	PeliculaRepository peliculaRepository;
 	
 	@Transactional
 	public void run() {
@@ -48,6 +52,19 @@ public class MuchosMuchosInsert {
          * Por ultimo llamar a directorRepository.save(Elegir algun director)
          */
         this.directorRepository.save(pineiro);
+        
+        /* MISMO EJERCICIO DE AYER 
+         * agregarActor en la entity Pelicula
+         * agregarPelicula en la entity Actor
+        plataQuemada.actores.add(pabloEcharri);
+        plataQuemada.actores.add(eduardoNoriega);
+        plataQuemada.actores.add(sbaraglia);
+        pabloEcharri.peliculas.add(plataQuemada);
+        eduardoNoriega.peliculas.add(plataQuemada);
+        sbaraglia.peliculas.add(plataQuemada);
+        */
+        
+        peliculaRepository.save(plataQuemada);
         
         // Enlazar muchos a muchos, es muy similar a uno a muchos
         // Bidireccional
